@@ -92,7 +92,7 @@
 
         .card-container{
     transform: translate(-50%, -50%);
-    height: 130px;
+    height: auto;
     width: 400px;
     text-align: center;
     border-radius: 5px;
@@ -123,7 +123,6 @@
     translate: -50% -50%;
     z-index: -1;
     padding: 3px;
-    margin-left: 180px;
     border-radius: 10px;
     animation: 3s spin linear infinite;
 }
@@ -474,55 +473,30 @@
         display: flex;
         flex-wrap:wrap;
         gap:20px;
-        padding-left: 100px;
-width:100vw;
-height: 300px;
+width:auto;
+height: auto;
 justify-content: space-between;
-align-items: end;
+align-items: center;
         background-color: #f4f3e7;
-        padding: 50px;
+        padding-top: 200px;
       "
     >
       <div
         class="card-container mb-3"
-        style="max-width: 400px;
+        style="min-width: 150px;
+        max-width: 400px;
          background-color: transparent;
+         height: auto;
+         margin-left: 200px;
          "
       >
-        <div class="card-face row g-0" style="margin-left: 180px;">
-          <div class="col-md-4">
-            <img
-              src="https://images.ctfassets.net/eum7w7yri3zr/5OpJOQ3GY07jP9xxGih9Uy/87a2b0e565342cf90857236957938f3c/in-the-news-01-V3.png?fm=jpg&fl=progressive&fit=crop&f=faces&w=360&h=360&q=75"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="card-container border-animation mb-3"
-        style="max-width: 400px;
-         background-color: transparent;"
-      >
-        <div class="card-face row g-0" style="margin-left: 180px;">
-          <div class="col-md-4">
-            <img
+        <div class="card-face row g-0" style="display: flex; height: auto; flex-wrap: wrap; width: auto;">
+          <div class="col-md-4" style="display: flex; align-items: center; width: auto; justify-content: center; height: auto; flex-wrap: wrap; padding: 5px;">
+            <img width="133" height="133" style="border-radius: 10px;"
               src="https://images.ctfassets.net/eum7w7yri3zr/15tg2tG39ogDWlWrHNwoFV/5c36cfa99bd970cee2b3e5734747ff55/in-the-news-02.png?fm=jpg&fl=progressive&fit=crop&f=faces&w=360&h=360&q=75"
               class="img-fluid rounded-start"
               alt="..."
             />
-          </div>
-          <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -535,19 +509,50 @@ align-items: end;
         </div>
       </div>
       <div
-        class="card-container border-animation mb-3"
-        style="max-width: 400px;
-         background-color: transparent;"
+        class="card-container mb-3"
+        style="min-width: 150px;
+        max-width: 400px;
+         background-color: transparent;
+         margin-top: auto;
+         height: auto;
+         margin-left: 200px;
+         "
       >
-        <div class="card-face row g-0" style="margin-left: 180px;">
-          <div class="col-md-4">
-            <img
+        <div class="card-face row g-0" style="display: flex; height: auto; flex-wrap: wrap; width: auto;">
+          <div class="col-md-4" style="display: flex; align-items: center; width: auto; justify-content: center; height: auto; flex-wrap: wrap; padding: 5px;">
+            <img width="133" height="133" style="border-radius: 10px;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/15tg2tG39ogDWlWrHNwoFV/5c36cfa99bd970cee2b3e5734747ff55/in-the-news-02.png?fm=jpg&fl=progressive&fit=crop&f=faces&w=360&h=360&q=75"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card-container mb-3"
+        style="min-width: 150px;
+        max-width: 400px;
+         background-color: transparent;
+         margin-top: auto;
+         height: auto;
+         margin-left: 200px;
+         "
+      >
+        <div class="card-face row g-0" style="display: flex; height: auto; flex-wrap: wrap; width: auto;">
+          <div class="col-md-4" style="display: flex; align-items: center; width: auto; justify-content: center; height: auto; flex-wrap: wrap; padding: 5px;">
+            <img width="133" height="133" style="border-radius: 10px;"
               src="https://images.ctfassets.net/eum7w7yri3zr/1CgnobGTUePR7AY6DVdO9c/9f1c2265e3c17dd75458d47e466eb881/20230808_SWEETGREEN1210__1_.jpg?w=1200&q=&fm=avif"
               class="img-fluid rounded-start"
               alt="..."
             />
-          </div>
-          <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">
@@ -561,6 +566,9 @@ align-items: end;
       </div>
     </div>
 
+
+      
+     
 
 
     <div
@@ -826,7 +834,7 @@ align-items: center;
         height: auto;
         background-color: #e8dcc6;
         border: none;
-        padding: 0px 0px 0px 50px;
+        padding: 50px;
       ">
       <div class="text-sec" style="padding-top: 50px;">
         <h1 class="card-title">
