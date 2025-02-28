@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+        /* Navbar ko fix karna */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            background-color: #f4f3e7 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 15px;
+        }
+        /* Navbar ke neeche ka content adjust karna */
+        .content {
+            margin-top: 70px;
+        }
+        /* ORDER button styling */
+        .order-btn {
+            border-radius: 15px;
+            color: #e6ff55;
+            background-color: #00473c;
+            padding: 5px 10px;  /* Button ka padding chhota kiya */
+            font-size: 14px;  /* Font size chhota kiya */
+            width: 100px;  /* Fixed width di taake button compact ho */
+            height: 35px;  /* Button ka height adjust kiya */
+            border: none;
+        }
+        /* Navbar items ke spacing ko better align karna */
+        .navbar-nav {
+            gap: 20px; /* Links ke beech gap maintain karna */
+        }
+    </style>
+    <title>salad</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="menu.html">Our Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="mission.html">Our Mission</a>
+                    </li>
+                </ul>
+                <button class="order-btn">ORDER</button>
+            </div>
+        </div>
+    </nav>
+    <div
+      class="text-sec"
+      style="
+        height: 200px;
+        background-color: #f4f3e7;
+        font-family: Grenette, Georgia, Cambria, Palatino;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 100px;
+      "
+    >
+      <h1>Fresh, plant-forward, earth <br />friendly food.</h1>
+    </div>
+
+      <div class="food-menu" style="background-color: #f4f3e7; padding-top: 100px; width: 100vw;">
+        <h1 style="margin-left: 20px">Bowls</h1>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            gap:20px;
+            flex-wrap: wrap;
+            background-color: #f4f3e7;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/Br3EYlf6srQYhCXdvOfwt/65b582e0c488a871e36cda2ea5e52df3/SG_Web_Image_Bowl_Harvest.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/77bQryCjkOcr4lAKYIpo1C/a8e219ee7820abea85944e2751863cf2/SG_Web_Image_Bowl_Crispy_Rice_Bowl.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/5Kw3escovLNb8uWqQuzR7o/fb77087267c6de716f49d50ff755ede5/SG_Web_Image_Bowl_Chicken_Pesto_Parm.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            gap:20px;
+            flex-wrap: wrap;
+            background-color: #f4f3e7;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/opkhdGIeByDTaIOKBzGKU/4692e29fb3ad28c7bd54634cd7622720/SG_Web_Image_Bowl_Chicken_Avocado_Ranch.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/GfXc33iGipBc9eYJM7bAP/19c0ecb3908d0f7f20cd5d904cb12937/SG_Web_Image_Bowl_Fish_Taco.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/57c1vaLIB4WtuQXQblhUa5/5bbbf55c178b7985a03f994749445040/SG_Web_Image_Bowl_Shroomami.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/57c1vaLIB4WtuQXQblhUa5/5bbbf55c178b7985a03f994749445040/SG_Web_Image_Bowl_Shroomami.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="food-menu" style="background-color: #f4f3e7; padding-top: 100px; ">
+        <h1 style="margin-left: 20px">Salads</h1>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/5418ra5b4TcMHRxOIobxUx/db9774df0dc69cf6b0aa8c40460a43a0/SG_Web_Image_Salad_Kale_Caesar_Chicken.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/3Z3fW9JhznhFDphzlHNmRx/d6410c46ffb8fc2c4c19c736a7f8d920/SG_Web_Image_Salad_Guacamole_Greens.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/5fITPYckTJf9NUIbgSStrj/02544cca800ef61e835979c8831f4d30/SG_Web_Image_Salad_BBQ_Chicken.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4wPVg3FJWpETYHNRZ2lN4p/4ee91be84b3ee4e1a31e6df494f89d21/SG_Web_Image_Salad_Hummus_Crunch.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/QCN3MLGE4UBEnU6vSjpyz/d17102e51361c12b6a14590b89701eb9/SG_Web_Image_Salad_Buffalo_Chicken.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/6oXc02nY5QhEb9tYyZDyKZ/286ddb040d1842580fcbea40bf7c4a47/SG_Web_Image_Protein_Plate_Super_Green_Goddess.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="food-menu" style="background-color: #f4f3e7; padding-top: 100px;">
+        <h1 style="margin-left: 20px">Kid's Meal</h1>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/6m23jjtBJux5MU8T4h0pHF/781db31f0cc546426f183eb1b9b8b611/SG_Web_Image_Kids_Ranchy_Chicken_Rice.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4rLqWwSWJ1VFqA5v5yeVkw/99c21600330c15b85e37368ddc081337/SG_Web_Image_Kids_Little_Harvest.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/6bfLnJgczdU5hjy01yiBT3/6f770cef62e5c5bad9260e5888c6ecb0/SG_Web_Image_Kids_Mini_Mezze.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="food-menu" style="background-color: #f4f3e7; padding-top: 100px;">
+        <h1 style="margin-left: 20px">Local Items</h1>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            text-align: center;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/2Nmjt0Mqc4i9Rxi0mmJI4M/913a61ac1f9393e8bad35ca924751e10/SG_Web_Image_Plate_Miso_Glazed_Salmon.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/GfXc33iGipBc9eYJM7bAP/19c0ecb3908d0f7f20cd5d904cb12937/SG_Web_Image_Bowl_Fish_Taco.png?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="food-menu" style="background-color: #f4f3e7; padding-top: 100px;">
+        <h1 style="margin-left: 20px">Sides</h1>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/6KrjKxVXHWvcbVNVuRm4M4/dba9726d9afd6ac3e0bb6c4d5a4dd088/SG_Web_Image_Side_Rosemary_Focaccia.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/6sor0rLM2jzSrGyyFAjfgJ/ce36dce9553e57f9723fda285dd279b6/SG_Web_Image_Side_Hummus_Focaccia.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/5emJWQD3CfWTvVfJbSG8G7/edf1cfed73259bd969af2f685b927884/SG_Web_Image_Side_Roasted_Sweet_Potatoes.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4gdYMZWVSk3qDvAsvKih78/18fb03a2bb622f4d09abf5e43df10fb7/SG_Web_Image_Attachment_Green_Goddess_Potato_Chips.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4Wx2AQpERoH0tuYWwsTpcv/b0a637bc270c9f3f948c67008e9c4472/SG_Web_Image_Attachment_Green_Sea_Salt_Chips.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4V9fqsKe26i8wGlh2cMEK0/02c33ad1a56789778b30cdc716cfc9a6/SG_Web_Image_Attachment_Hot_Stuff.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>    
+      <div class="food-menu" style="background-color: #f4f3e7; padding-top: 100px;">
+        <h1 style="margin-left: 20px">Drinks</h1>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4Zjla0j9Idt446HME9CbHC/b4edcb323a748ba157acf7b9ab904a31/SG_Web_Image_Beverage_Still_Water.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/n4bXyxuBVKLqARQ4GCfbf/01ab2746712d69a9847f128c494e1c3c/SG_Web_Image_Beverage_Sparkling_Water.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4cBlNyAxhJQUhLavQ5SPBQ/23eb1b26b7953b591e8481ac3bf277a7/SG_Web_Image_Beverage_OLIPOP_Lemon_Lime.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/37EjSxZ9gQdxpIlGVDfSI8/19ed8c5de919bd580450f955a33e4a49/SG_Web_Image_Beverage_OLIPOP_Vintage_Cola.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/1LbPersOU2XR2zCTrlAJvx/10914b2d30e9c63c293c84b3d4ac85a7/SG_Web_Image_Beverage_Spindrift_Raspberry_Lime.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/6t0A5W6yaztUtPnhcjTVA4/0f57405943cb7d4677871741d43d1985/SG_Web_Image_Beverage_Spindrift_Grapefruit.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/2jHOZmyz32YglnVD4E0Cgv/8970c1d1c0000c6587b5905ab575f604/SG_Web_Image_Beverage_Jasmine_Green_Tea.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/j28IU9sScvgvuvnQ5AkBj/a56a14858807fcd486277566fb11973d/SG_Web_Image_Beverage_Hibiscus_Berry_Tea.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/73q26fd8X95YJPd9fADa51/f118f816bc039b82ee718d0aac8ac301/SG_Web_Image_Beverage_Lemonade.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="food-con"
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f4f3e7;
+            gap:20px;
+            flex-wrap: wrap;
+          "
+        >
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/3fFbEkMMtigX0TkRmbAkyi/6f851df978338a1857fc679cac61ff9f/SG_Web_Image_Beverage_Ghia_Ginger.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/4crOx1x2gNtaOI0chO7DS4/e0c1b67d3f0d107ecf248fd0e7cabc88/SG_Web_Image_Beverage_Health_Ade_Pink_Lady_Apple.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 30rem; border: none;">
+            <img style="border-radius: 10px; background-color: #f4f3e7;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/PtKFIg7huMphlY8O0yUqh/21503dab277ec4a55728eb729a972a28/SG_Web_Image_Beverage_Health_Ade_Passion_Fruit.jpg?w=600&fm=avif&q=75"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body" style="background-color: #f4f3e7;">
+              <h3>Caramelized Garlic Steak</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the
+                bulk of the card's content.
+              </p>
+              <div class="detail-group" style="display: flex; justify-content: space-between;">
+                <div class="details">
+                <a
+                  >860 <br>Calories</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >13G <br>Protein</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >89G <br>Carbs</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >40G <br>Fat</a
+                >
+                </div>
+                <div class="details">
+                  <a
+                  >6.63KG <br>CO2E</a
+                >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>   
+    <div class="last-details" style="display: flex; flex-direction: row; justify-content: space-evenly; height: auto; background-color: #f4f3e7;padding: 20px; gap: 20px; flex-wrap: wrap;">
+        <div class="card mb-3" style="width: 30rem; border: none; background-color: #fbd7ba;">
+        <div class="card-body">
+          <h5 style="padding-top: 30px;" class="card-title">Customize</h5>
+          <h1 style="padding-top: 30px;" class="card-text">Create your own<br>
+            bowl with your<br>
+            favorites</h1>
+            <button
+            style="
+              margin-right: 50px;
+              border-radius: 15px;
+              color: #00473c;
+              background-color: #e6ff55;
+              width: 190px;
+              height: 45px;
+              border: none;
+            "
+          >
+            Order Now
+          </button>
+        </div>
+      </div>
+      
+      <div class="card text-center mb-3" style="width: 30rem; border: none; background-color: #d8e5d6;">
+        <div class="card-body">
+          <h5 style="padding-top: 30px;" class="card-title">Nutrition</h5>
+          <h1 style="padding-top: 30px;" class="card-text">Download our<br>
+            nutritional<br>
+            information</h1>
+          <button
+            style="
+              margin-right: 50px;
+              border-radius: 15px;
+              color: #00473c;
+              background-color: #e6ff55;
+              width: 190px;
+              height: 45px;
+              border: none;
+            "
+          >
+            Download
+          </button>
+        </div>
+      </div>
+      
+      <div class="card text-end" style="width: 30rem; height: 384px; border: none; background-color: rgb(213, 247, 247);">
+        <div class="card-body">
+          <h5 style="padding-top: 30px;" class="card-title">The average American meal emits between 1.9 - <br>3.4 kg CO2e.</h5>
+          <h1 style="padding-top: 30px;" class="card-text">Check out how we<br>
+            calculate our<br>
+            carbon footprint</h1>
+          <button
+            style="
+              margin-right: 50px;
+              border-radius: 15px;
+              color: #00473c;
+              background-color: #e6ff55;
+              width: 190px;
+              height: 45px;
+              border: none;
+            "
+          >
+          Carbon Methodology 
+          </button>
+        </div>
+      </div></div> 
+    
+    <div class="row" style="display: flex; height: auto;">
+      <div class="col-sm-6 mb-3 mb-sm-0" style="background-color: #f4f3e7">
+        <div class="card" style="border: none; background-color: #f4f3e7">
+          <div class="card-body" style="border: 1px solid black">
+            <h5 class="card-title">Join Our Newsletter</h5>
+            <h3 class="card-text">
+              Sign up for exclusive promos, new menu drops, store openings, and
+              more.
+            </h3>
+            <label
+              for="exampleInputEmail1"
+              class="form-label"
+              style="margin-top: 10px"
+              >Email address</label
+            >
+            <input
+              style="border: 1px solid black"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6" style="background-color: #f4f3e7; border: 1px solid black;">
+        <div class="card" style="border: none; background-color: #f4f3e7; text-align: center;">
+          <div class="card-body">
+            <h5 class="card-title">Download the app</h5>
+            <a style="text-decoration: none; color: black" href="#"
+              ><h1>iOS</h1></a
+            >
+            <a style="text-decoration: none; color: black" href="#"
+              ><h1>Android</h1></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer style="background-color: #d8e5d6; display: flex; flex-direction: column;">
+      <div class="title-line">
+        <marquee>
+          <h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, odio
+            consequuntur fuga ea aliquam quas hic nihil provident eaque qui quae
+            blanditiis facilis aliquid perferendis modi, laudantium at? Nisi,
+            laboriosam.
+          </h1>
+        </marquee>
+      </div>
+      <div
+        class="footer-links"
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        "
+      >
+        <div
+          class="first"
+          style="display: flex; flex-direction: column; padding: 40px"
+        >
+          <a style="text-decoration: none; color: black" href="#">Careers</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >Investor Relations</a
+          >
+          <a style="text-decoration: none; color: black" href="#">Locations</a>
+          <a style="text-decoration: none; color: black" href="#">Press</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >sweetgreen app</a
+          >
+        </div>
+        <div
+          class="first"
+          style="display: flex; flex-direction: column; padding: 40px"
+        >
+          <a style="text-decoration: none; color: black" href="#">Careers</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >Investor Relations</a
+          >
+          <a style="text-decoration: none; color: black" href="#">Locations</a>
+          <a style="text-decoration: none; color: black" href="#">Press</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >sweetgreen app</a
+          >
+        </div>
+        <div
+          class="first"
+          style="display: flex; flex-direction: column; padding: 40px"
+        >
+          <a style="text-decoration: none; color: black" href="#">Careers</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >Investor Relations</a
+          >
+          <a style="text-decoration: none; color: black" href="#">Locations</a>
+          <a style="text-decoration: none; color: black" href="#">Press</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >sweetgreen app</a
+          >
+        </div>
+        <div
+          class="first"
+          style="display: flex; flex-direction: column; padding: 40px"
+        >
+          <a style="text-decoration: none; color: black" href="#">Careers</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >Investor Relations</a
+          >
+          <a style="text-decoration: none; color: black" href="#">Locations</a>
+          <a style="text-decoration: none; color: black" href="#">Press</a>
+          <a style="text-decoration: none; color: black" href="#"
+            >sweetgreen app</a
+          >
+        </div>
+        <div class="first" style="padding: 40px">
+          <h5>@2025 Sweetgreen</h5>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

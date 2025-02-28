@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+        /* Navbar ko fix karna */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1050;
+            background-color: #f4f3e7 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 15px;
+        }
+        /* Navbar ke neeche ka content adjust karna */
+        .content {
+            margin-top: 70px;
+        }
+        /* ORDER button styling */
+        .order-btn {
+            border-radius: 15px;
+            color: #e6ff55;
+            background-color: #00473c;
+            padding: 5px 10px;  /* Button ka padding chhota kiya */
+            font-size: 14px;  /* Font size chhota kiya */
+            width: 100px;  /* Fixed width di taake button compact ho */
+            height: 35px;  /* Button ka height adjust kiya */
+            border: none;
+        }
+        /* Navbar items ke spacing ko better align karna */
+        .navbar-nav {
+            gap: 20px; /* Links ke beech gap maintain karna */
+        }
+
+
+        .slideshow-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            overflow: hidden;
+        }
+        .slideshow {
+            display: flex;
+            width: 80%;
+            height: 500px;
+        }
+        .column {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            margin: 0 10px;
+            height: 100%;
+        }
+        .slides {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .column:nth-child(odd) .slides {
+            animation: slideUp 20s linear infinite;
+        }
+        .column:nth-child(even) .slides {
+            animation: slideDown 20s linear infinite;
+            /* animation-delay: 5s; Staggered start */
+        }
+        .slides video {
+            width: 100%;
+            display: block;
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        @keyframes slideDown {
+            0% { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+        }
+
+        .card-container{
+    transform: translate(-50%, -50%);
+    height: 130px;
+    width: 400px;
+    text-align: center;
+    border-radius: 5px;
+}
+.card-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    transition: transform .4s linear;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.card-container::after, .card-container::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), rgb(252, 11, 11), rgb(250, 168, 14), rgb(216, 29, 169), rgb(10, 158, 10), rgb(240, 240, 40), rgb(30, 30, 238));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    margin-left: 180px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+.card-container::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+
+
+
+.card__img{
+    width: 328px;
+    border-radius: 1.5rem;
+}
+
+.card__data{
+    width: 280px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+.card__description{
+    display: block;
+    font-size: .875rem;
+    margin-bottom: .25rem;
+}
+
+.card__title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 15%);
+    margin-bottom: .75rem;
+}
+
+.card__button{
+    text-decoration: none;
+    font-size: .875rem;
+    font-weight: 500;
+    color: hsl(82, 60%, 28%);
+}
+
+.card__button:hover{
+    text-decoration: underline;
+}
+
+.card__article:hover .card__data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.card__article:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover){
+    animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data{
+    animation: remove-data 1s forwards;
+}
+
+@keyframes show-data{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 340px){
+    .container{
+        margin-inline: 1rem;
+    }
+
+    .card__data{
+        width: 250px;
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .card__container{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1.5rem;
+    }
+}
+@media screen and (max-width: 1120px){
+    .container{
+        height: 100vh;
+    }
+    .card__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card__img{
+        width: 348px;
+    }
+    .card__data{
+        width: 316px;
+        padding-inline: 2.5rem;
+    }
+}
+    </style>
+    </style>
+    <title>salad</title>
+  </head>
+  <>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a style="padding: 0;" class="navbar-brand fw-bold" href="index.html"><img height="50px" width="50px" src="new food logo.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="menu.html">Our Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="mission.html">Our Mission</a>
+                    </li>
+                </ul>
+                <button class="order-btn">ORDER</button>
+            </div>
+        </div>
+    </nav>
+    <div class="carousel" style="width: 100vw;">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="mirch masal image.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="m2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="m3.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+    </div>
+     <!-- <div class="container mt-4" style="width: 100vw; height: auto;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin: 0; padding: 0; display: flex; width: 100vw;">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.ctfassets.net/eum7w7yri3zr/2kD9mpLAlvub8t5q8Gopdg/81af15ba52e3e190d161c2724898daa4/sweetgreen_HP_Slider_NRO_Desktop.jpg?w=1600&q=75&fm=avif" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption d-block">
+                        <h5>First Slide</h5>
+                        <p>Description for first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.ctfassets.net/eum7w7yri3zr/2kD9mpLAlvub8t5q8Gopdg/81af15ba52e3e190d161c2724898daa4/sweetgreen_HP_Slider_NRO_Desktop.jpg?w=1600&q=75&fm=avif" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-block">
+                        <h5>Second Slide</h5>
+                        <p>Description for second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.ctfassets.net/eum7w7yri3zr/2kD9mpLAlvub8t5q8Gopdg/81af15ba52e3e190d161c2724898daa4/sweetgreen_HP_Slider_NRO_Desktop.jpg?w=1600&q=75&fm=avif" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption d-block">
+                        <h5>Third Slide</h5>
+                        <p>Description for third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>  -->
+    <div
+      class="card"
+      style="
+       width:100vw;
+        background-color: #d8e5d6;
+        border: none;
+        padding: 50px;
+        display: flex;
+      "
+    >
+      <div class="row g-10 d-flex w-100 flex-wrap">
+        <div class="col-md-4">
+          <img
+            src="https://images.ctfassets.net/eum7w7yri3zr/3KJj1rIlmro9hzCPt2V3xu/19fd4da719138c99a045cc760d69ced2/Home_Page_New_Module-Image.jpg?w=1200&q=&fm=avif"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" style="text-align: center; gap: 20px; ">
+            <h1 class="card-title">
+              All the ways we keep <br />your workplace working
+            </h1>
+            <h3 class="card-text">
+              For the little things <br />
+              and the big milestones alike,<br />
+              we’re here to bring the plant party
+              <br />
+              Outpost
+              <br />
+              A daily batch delivery right to your office<br />
+              to keep your team firing on all cylinders.
+              <br />
+              Still WFH?
+              <br />
+              Learn about our sweetgreen credits program so your<br />
+              teams can fuel up with subsidized meals,<br />
+              wherever they are.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slideshow-body">
+        <div class="slideshow">
+        <div class="column">
+            <div class="slides">
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+            </div>
+        </div>
+        <div class="column">
+            <div class="slides">
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+            </div>
+        </div>
+        <div class="column">
+            <div class="slides">
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+            </div>
+        </div>
+        <div class="column">
+            <div class="slides">
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mo" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/food-glp-3.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-2.mov" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mo" autoplay loop muted></video>
+                <video src="https://static.cookunity.com/growth/media/videos-cui/chef-glp-1.mov" autoplay loop muted></video>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+
+
+    <div
+      class="subtitleandbutton d-flex justify-content-between pl-10px"
+      style="background-color: #f4f3e7; padding-top: 20px; display: flex; gap:20px; flex-wrap:wrap"
+    >
+      <h4 style="margin-left: 30px">The Latest</h4>
+      <a
+        class="RM-button"
+        style="margin-right: 30px; text-decoration: none; color: black"
+        href="#"
+        >Read More</a
+      >
+    </div>
+    <div
+      class="card-slide"
+      id="sm"
+      style="
+        display: flex;
+        flex-wrap:wrap;
+        gap:20px;
+width:100vw;
+height: 300px;
+justify-content: space-between;
+align-items: end;
+        background-color: #f4f3e7;
+        padding: 50px;
+      "
+    >
+      <div
+        class="card-container mb-3"
+        style="max-width: 400px;
+         background-color: transparent;
+         "
+      >
+        <div class="card-face row g-0" style="margin-left: 180px;">
+          <div class="col-md-4">
+            <img
+              src="https://images.ctfassets.net/eum7w7yri3zr/5OpJOQ3GY07jP9xxGih9Uy/87a2b0e565342cf90857236957938f3c/in-the-news-01-V3.png?fm=jpg&fl=progressive&fit=crop&f=faces&w=360&h=360&q=75"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card-container border-animation mb-3"
+        style="max-width: 400px;
+         background-color: transparent;"
+      >
+        <div class="card-face row g-0" style="margin-left: 180px;">
+          <div class="col-md-4">
+            <img
+              src="https://images.ctfassets.net/eum7w7yri3zr/15tg2tG39ogDWlWrHNwoFV/5c36cfa99bd970cee2b3e5734747ff55/in-the-news-02.png?fm=jpg&fl=progressive&fit=crop&f=faces&w=360&h=360&q=75"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card-container border-animation mb-3"
+        style="max-width: 400px;
+         background-color: transparent;"
+      >
+        <div class="card-face row g-0" style="margin-left: 180px;">
+          <div class="col-md-4">
+            <img
+              src="https://images.ctfassets.net/eum7w7yri3zr/1CgnobGTUePR7AY6DVdO9c/9f1c2265e3c17dd75458d47e466eb881/20230808_SWEETGREEN1210__1_.jpg?w=1200&q=&fm=avif"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div
+      class="subtitleandbutton d-flex justify-content-between pl-10px"
+      style="background-color: #f4f3e7; padding-top: 20px; display: flex; gap:20px; flex-wrap:wrap"
+    >
+      <h4 style="margin-left: 30px">The Latest</h4>
+      <a
+        class="RM-button"
+        style="margin-right: 30px; text-decoration: none; color: black"
+        href="#"
+        >Read More</a
+      >
+    </div>
+    <div class="prom-con" style="
+    display: flex;
+    flex-wrap: wrap;
+">
+      <div
+      class="card-slide"
+      style="
+        display: flex;
+        flex-wrap:wrap;
+        gap:20px;
+        width: 100vw;
+justify-content: space-evenly;
+align-items: center;
+        background-color: #f4f3e7;
+        width:100vw;
+
+      "
+    >
+      <div
+        class="card__article mb-3"
+        style="max-width: 400px; background-color: #e8dcc6; position: relative; border-radius: 25px;"
+      >
+      <img src="https://cdn.shopify.com/s/files/1/0067/5531/9923/files/Mar-6-Rainbow_breaky_1024x1024.jpeg?v=1552458316" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Poon Hill, Nepal</span>
+                    <h2 class="card__title">Starry Night</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+      </div>
+      <div
+        class="card__article mb-3"
+        style="max-width: 400px; background-color: #e8dcc6; position: relative; border-radius: 25px;"
+      >
+      <img src="https://cdn.shopify.com/s/files/1/0067/5531/9923/files/Mar-6-Rainbow_breaky_1024x1024.jpeg?v=1552458316" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Poon Hill, Nepal</span>
+                    <h2 class="card__title">Starry Night</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+      </div>
+      <div
+        class="card__article mb-3"
+        style="max-width: 400px; background-color: #e8dcc6; position: relative; border-radius: 25px;"
+      >
+        <div class="row g-0">
+          <img src="https://cdn.shopify.com/s/files/1/0067/5531/9923/files/Mar-6-Rainbow_breaky_1024x1024.jpeg?v=1552458316" alt="image" class="card__img">
+                <div class="card__data">
+                    <span class="card__description">Poon Hill, Nepal</span>
+                    <h2 class="card__title">Starry Night</h2>
+                    <a href="#" class="card__button">Read More</a>
+                </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+    
+    
+
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div
+      class="card"
+      style="
+        background-color: #d8e5d6;
+        border: none;
+        padding: 50px;
+        display: flex;
+      "
+    >
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body" style="text-align: start; gap: 20px">
+            <h1 class="card-title">
+              All the ways we keep <br />your workplace working
+            </h1>
+            <h3 class="card-text">
+              For the little things <br />
+              and the big milestones alike,<br />
+              we’re here to bring the plant party
+              <br />
+              Outpost
+              <br />
+              A daily batch delivery right to your office<br />
+              to keep your team firing on all cylinders.
+              <br />
+              Still WFH?
+              <br />
+              Learn about our sweetgreen credits program so your<br />
+              teams can fuel up with subsidized meals,<br />
+              wherever they are.
+            </h3>
+            <button
+              style="
+                margin-right: 50px;
+                border-radius: 25px;
+                color: #00473c;
+                background-color: transparent;
+                width: 190px;
+                height: 45px;
+                margin-top: 30px;
+              "
+            >
+             <a href="#" style="text-decoration: none; color: black;"> Order Now -></a>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="https://images.ctfassets.net/eum7w7yri3zr/7C0UGrEDsHX16wSBPLRYDH/4f6d47f5e7157a69dee5fa64e88239ca/20230808_SWEETGREEN1564.jpg?w=1200&q=&fm=avif"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <div
+      class="card"
+      style="
+        background-color: #d8e5d6;
+        border: none;
+        padding: 50px;
+        display: flex;
+      "
+    >
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body" style="text-align: start; gap: 20px">
+            <h1 class="card-title">
+              All the ways we keep <br />your workplace working
+            </h1>
+            <h3 class="card-text">
+              For the little things <br />
+              and the big milestones alike,<br />
+              we’re here to bring the plant party
+              <br />
+              Outpost
+              <br />
+              A daily batch delivery right to your office<br />
+              to keep your team firing on all cylinders.
+              <br />
+              Still WFH?
+              <br />
+              Learn about our sweetgreen credits program so your<br />
+              teams can fuel up with subsidized meals,<br />
+              wherever they are.
+            </h3>
+            <button
+              style="
+                margin-right: 50px;
+                border-radius: 25px;
+                color: #00473c;
+                background-color: transparent;
+                width: 190px;
+                height: 45px;
+                margin-top: 30px;
+              "
+            >
+             <a href="#" style="text-decoration: none; color: black;"> Order Now -></a>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="https://images.ctfassets.net/eum7w7yri3zr/1CgnobGTUePR7AY6DVdO9c/9f1c2265e3c17dd75458d47e466eb881/20230808_SWEETGREEN1210__1_.jpg?w=1200&q=&fm=avif"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <div
+      class="card"
+      style="
+        background-color: #d8e5d6;
+        border: none;
+        padding: 50px;
+        display: flex;
+      "
+    >
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body" style="text-align: start; gap: 20px">
+            <h1 class="card-title">
+              All the ways we keep <br />your workplace working
+            </h1>
+            <h3 class="card-text">
+              For the little things <br />
+              and the big milestones alike,<br />
+              we’re here to bring the plant party
+              <br />
+              Outpost
+              <br />
+              A daily batch delivery right to your office<br />
+              to keep your team firing on all cylinders.
+              <br />
+              Still WFH?
+              <br />
+              Learn about our sweetgreen credits program so your<br />
+              teams can fuel up with subsidized meals,<br />
+              wherever they are.
+            </h3>
+            <button
+              style="
+                margin-right: 50px;
+                border-radius: 25px;
+                color: #00473c;
+                background-color: transparent;
+                width: 190px;
+                height: 45px;
+                margin-top: 30px;
+              "
+            >
+             <a href="#" style="text-decoration: none; color: black;"> Order Now -></a>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="https://images.ctfassets.net/eum7w7yri3zr/3KJj1rIlmro9hzCPt2V3xu/19fd4da719138c99a045cc760d69ced2/Home_Page_New_Module-Image.jpg?w=1200&q=&fm=avif"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <div
+      class="card"
+      style="
+      display: flex;
+        width: 100vw;
+        height: auto;
+        background-color: #e8dcc6;
+        border: none;
+        padding: 50px;
+      "
+    >
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body" style="text-align: start; gap: 20px">
+            <h1 class="card-title">
+              Step inside the<br>
+sweetgreen kitchen
+            </h1>
+            <h3 class="card-text" style="gap: 20px;">
+              Head over to TikTok for an<br> exclusive tutorial—how to make our<br> famed cashew dressing.
+            </h3>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <video width="100%" height="100%" style="padding-right: 300px;" autoplay playsinline muted loop>
+            <source loading="lazy" src="//videos.ctfassets.net/eum7w7yri3zr/tqIHrYka4VTGHFGLxYAvw/77e467dc040d075950bc9cc65d0719d1/Spicy_Cashew_Recipe.mov"/>
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="display: flex; height: auto;">
+      <div class="col-sm-6 mb-3 mb-sm-0" style="background-color: #f4f3e7">
+        <div class="card" style="border: none; background-color: #f4f3e7">
+          <div class="card-body" style="border: 1px solid black">
+            <h5 class="card-title">Join Our Newsletter</h5>
+            <h3 class="card-text">
+              Sign up for exclusive promos, new menu drops, store openings, and
+              more.
+            </h3>
+            <label
+              for="exampleInputEmail1"
+              class="form-label"
+              style="margin-top: 10px"
+              >Email address</label
+            >
+            <input
+              style="border: 1px solid black"
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6" style="background-color: #f4f3e7; border: 1px solid black;">
+        <div class="card" style="border: none; background-color: #f4f3e7; text-align: center;">
+          <div class="card-body">
+            <h5 class="card-title">Download the app</h5>
+            <a style="text-decoration: none; color: black" href="#"
+              ><h1>iOS</h1></a
+            >
+            <a style="text-decoration: none; color: black" href="#"
+              ><h1>Android</h1></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer style="background-color: #d8e5d6; display: flex; flex-direction: column; width:100vw">
+        <div class="title-line">
+            <marquee>
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, odio consequuntur fuga ea aliquam quas hic nihil provident eaque qui quae blanditiis facilis aliquid perferendis modi, laudantium at? Nisi, laboriosam.</h1>
+            </marquee>
+        </div>
+        <div class="footer-links" style="display: flex; flex-direction: row; justify-content: space-between; width:100vw; flex-wrap: wrap;">
+            <div class="first" style="display: flex; flex-direction: column; padding: 40px; ">
+                <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                <a style="text-decoration: none; color: black;" href="#">Press</a>
+                <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+            </div>
+            <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                <a style="text-decoration: none; color: black;" href="#">Press</a>
+                <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+            </div>
+            <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                <a style="text-decoration: none; color: black;" href="#">Press</a>
+                <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+            </div>
+            <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                <a style="text-decoration: none; color: black;" href="#">Press</a>
+                <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+            </div>
+            <div class="first" style="padding: 40px;">
+                <h5>@2025 Sweetgreen</h5>
+            </div>
+        </div>
+        </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

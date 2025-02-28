@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f4f3e7; }
+        /* Navbar ko fix karna */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            background-color: #f4f3e7 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 15px;
+        }
+        /* Navbar ke neeche ka content adjust karna */
+        .content {
+            margin-top: 70px;
+        }
+        /* ORDER button styling */
+        .order-btn {
+            border-radius: 15px;
+            color: #e6ff55;
+            background-color: #00473c;
+            padding: 5px 10px;  /* Button ka padding chhota kiya */
+            font-size: 14px;  /* Font size chhota kiya */
+            width: 100px;  /* Fixed width di taake button compact ho */
+            height: 35px;  /* Button ka height adjust kiya */
+            border: none;
+        }
+        /* Navbar items ke spacing ko better align karna */
+        .navbar-nav {
+            gap: 20px; /* Links ke beech gap maintain karna */
+        }
+        .card-section { padding: 50px 0; }
+        .flip-card {
+            width: 100%;
+            height: 500px;
+            perspective: 1000px;
+            position: relative;
+        }
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .flip-card-front, .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .flip-card-front { background-size: cover; color: white; }
+        .flip-card-back {
+            background: #fbeac1;
+            transform: rotateY(180deg);
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        /* @media (max-width: 768px) {
+            .navbar-nav { flex-direction: column; }
+            .btn-order { margin-top: 10px; }
+            .card-body { padding: 20px; text-align: center; }
+            .flip-card { height: 400px; }
+        } */
+    </style>
+    <title>salad</title>
+</head>
+<body style="background-color: #f4f3e7;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="menu.html">Our Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: black;" href="mission.html">Our Mission</a>
+                    </li>
+                </ul>
+                <button class="order-btn">ORDER</button>
+            </div>
+        </div>
+    </nav>
+      <div class="nav-2" style="background-color: #f4f3e7; padding-top: 100px;">
+        <ul
+          class="nav nav-underline d-flex justify-content-around w-100 align-items-center"
+        >
+          <li class="nav-item">
+            <h1><a class="nav-link" style="text-decoration: none; color: black;" href="#Our-story">Our Mission</a></h1>
+          </li>
+          <li class="nav-item">
+            <h1><a class="nav-link" style="text-decoration: none; color: black;" href="#Sustainability">Our Story</a></h1>
+          </li>
+          <li class="nav-item">
+            <h1><a class="nav-link" style="text-decoration: none; color: black;" href="#Our-mission">Sustainability</a></h1>
+          </li>
+        </ul>
+      </div>
+      <div
+      id="Our-story"
+      class="card"
+      style="
+        max-width: 100%;
+        height: auto;
+        background-color: #d8e5d6;
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+      "
+    >
+      <div class="row g-0" style="width: 100vw; height: auto;">
+        <div class="col-md-4" style="width: 50%;">
+          <img
+          style="height: 100%; width: 100%;"
+            src="https://images.ctfassets.net/eum7w7yri3zr/5oJHeIF5NflLTzU77FVP5r/e6fa696e04fed126f46a12441a4c4aa9/our-story2.jpg?w=1200&q=75&fm=avif"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8" style="width: 50%; padding-top: 50px;">
+          <div class="card-body" style="text-align: center; gap: 20px">
+            <h1 class="card-title">
+                Our Story
+            </h1>
+            <h1 class="card-text" style="padding-top: 100px;">
+                Building healthier communities by connecting people to real food
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-d" style="background-color: #f4f3e7; margin-top: 100px;">
+        <h1 style="text-align: center;">We’re leading a movement to reimagine fast food for a new era.</h1>
+        <p style="text-align: center;">Our core values guide our actions and we aim to empower our customers, team members and partners to be a positive<br> force on the food system. That’s why we’re building a transparent supply network, why we<br> cook from scratch, and why we’re building a community of people<br> who believe in the power of real food.</p>
+    </div>
+    <div
+    id="Sustainability"
+      class="card"
+      style="
+        max-width: 100%;
+        height: auto;
+        background-color: #f8eed6;
+        border: none;
+      "
+    >
+      <div class="row g-0" id="Sustainability">
+        <div class="col-md-8" style="width: 50%; padding-top: 50px;">
+          <div class="card-body" style="text-align: center; gap: 20px">
+            <h1 class="card-title">
+                Sustainability
+            </h1>
+            <h1 class="card-text" style="padding-top: 100px;">
+                Building healthier communities by connecting people to real food
+            </h1>
+          </div>
+        </div>
+        <div class="col-md-4" style="width: 50%;">
+            <img
+            style="height: 100%; width: 100%;"
+              src="https://images.ctfassets.net/eum7w7yri3zr/53xXry3xNwfyJbftM5exQw/bbbc95748f859fd1b5c1f4edd32513a4/our-story.jpg?w=1200&q=75&fm=avif"
+              class="img-fluid rounded-start"
+              alt="..."
+            />
+          </div>
+      </div>
+    </div>
+    <div class="text-d" style="background-color: #f4f3e7; margin-top: 100px; text-align: center;">
+        <h1>We started sweetgreen as three college students who<br> were simply looking for a healthier way to eat..</h1>
+        <p>Our core values guide our actions and we aim to empower our customers, team members and partners to be a positive<br> force on the food system. That’s why we’re building a transparent supply network, why we<br> cook from scratch, and why we’re building a community of people<br> who believe in the power of real food.</p>
+        <a style="text-decoration: none; color: black;" href="#">Learn More</a>
+    </div>
+    <div
+    id="Our-mission"
+      class="card"
+      style="
+        max-width: 100%;
+        height: auto;
+        background-color: #d8e5d6;
+        border: none;
+      "
+    >
+      <div class="row g-0">
+        <div class="col-md-4" style="width: 50%;">
+          <img
+          style="height: 100%; width: 100%;"
+            src="https://images.ctfassets.net/eum7w7yri3zr/qON4X0mVmIy0lckAPhpdR/08beee5bfc63d75b493c82fe5b3ea8a4/our-impact-v2_copy.jpg?w=1200&q=75&fm=avif"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8" style="width: 50%; padding-top: 50px;">
+          <div class="card-body" style="text-align: center; gap: 20px">
+            <h1 class="card-title">
+                Our Mission
+            </h1>
+            <h1 class="card-text" style="gap: 20px;">
+                Building healthier communities by connecting people to real food
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-d" style="background-color: #f4f3e7; gap: 20px;; text-align: center;">
+        <h1>We’re committed to becoming carbon neutral by the end<br> of 2027.</h1>
+        <p>Our core values guide our actions and we aim to empower our customers, team members and partners to be a positive<br> force on the food system. That’s why we’re building a transparent supply network, why we<br> cook from scratch, and why we’re building a community of people<br> who believe in the power of real food.</p>
+        <a style="text-decoration: none; color: black;" href="#">Learn More</a>
+    </div>
+    <div class="text-d" style="background-color: #f4f3e7; gap: 20px;; text-align: center;">
+        <h1>We’re committed to continuously improving our<br> standards, and that includes farm animal welfare.</h1>
+        <p>Our core values guide our actions and we aim to empower our customers, team members and partners to be a positive<br> force on the food system. That’s why we’re building a transparent supply network, why we<br> cook from scratch, and why we’re building a community of people<br> who believe in the power of real food.</p>
+        <a style="text-decoration: none; color: black;" href="#">Learn More</a>
+    </div>
+    <div class="card-container" style=" display: flex; gap: 40px; justify-content: space-evenly; text-align: center; flex-wrap: wrap; height: auto;">
+        <div class="card" style="width: 400px; height: 500px; perspective: 1000px; position: relative; background-color: #f4f3e7; border: none;">
+            <div class="card-inner" style="width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s;">
+                <div class="card-front" style="width: 100%; height: 100%; position: absolute; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; border-radius: 10px; background: url(https://images.ctfassets.net/eum7w7yri3zr/1Xm2R1djpKlicbWIc0wG3o/e731d7f490df8431883b6520ba8ef3ae/our_impact_grid_card_local_sourcing.png?w=600&fm=avif&q=75)no-repeat; background-size: cover; background-color: #fbeac1;">
+                    <button onclick="this.parentElement.parentElement.style.transform = this.parentElement.parentElement.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer;">↻</button>
+                </div>
+                <div class="card-back" style="width: 100%; height: 100%; position: absolute; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: black; border-radius: 10px; background: #fbeac1; transform: rotateY(180deg); padding: 50px;">
+                    <p>We work closely with our suppliers to help implement industry-leading strategies for carbon minimization. Our goal is to support farmers and producers who participate in regenerative practices—ones that give more to the land than they take away.</p>
+                    <button onclick="this.parentElement.parentElement.style.transform = this.parentElement.parentElement.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer;">↻</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 400px; height: 500px; perspective: 1000px; position: relative; background-color: #f4f3e7; border: none;">
+            <div class="card-inner" style="width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s;">
+                <div class="card-front" style="width: 100%; height: 100%; position: absolute; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; border-radius: 10px; background: url(https://images.ctfassets.net/eum7w7yri3zr/4by0jh9Czp1LaKjvCPh0tK/a8c99b63a31690cdd8af3ae708cddf1c/our_impact_grid_card_animal_welfare.png?w=600&fm=avif&q=75)no-repeat; background-size: cover; background-color: #fbeac1;">
+                    <button onclick="this.parentElement.parentElement.style.transform = this.parentElement.parentElement.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer;">↻</button>
+                </div>
+                <div class="card-back" style="width: 100%; height: 100%; position: absolute; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: black; border-radius: 10px; background: #fbeac1; transform: rotateY(180deg); padding: 50px;">
+                    <p>We calculate an accurate carbon footprint for each of our menu items by commissioning carbon assessments of our specific suppliers. These reports illustrate how much carbon is generated at every stage of business, from seed to salad. We use this data to direct our menu and adjust as needed.</p>
+                    <button onclick="this.parentElement.parentElement.style.transform = this.parentElement.parentElement.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer;">↻</button>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 400px; height: 500px; perspective: 1000px; position: relative; background-color: #f4f3e7; border: none;">
+            <div class="card-inner" style="width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s;">
+                <div class="card-front" style="width: 100%; height: 100%; position: absolute; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; border-radius: 10px; background: url(https://images.ctfassets.net/eum7w7yri3zr/2UknpFvjOIWmgamu7b8JIT/66d796888192ff2dcca06eba4dc6066e/our_impact_grid_card_sustainability.png?w=600&fm=avif&q=75)no-repeat; background-size: cover; background-color: #fbeac1;">
+                    <button onclick="this.parentElement.parentElement.style.transform = this.parentElement.parentElement.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer;">↻</button>
+                </div>
+                <div class="card-back" style="width: 100%; height: 100%; position: absolute; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: black; border-radius: 10px; background: #fbeac1; transform: rotateY(180deg); padding: 30px;">
+                    <p>We optimize our building materials from construction to furniture, investing in clean energy, and industrial equipment to make a minimal impact. Our restaurants are designed to contribute to a more sustainable future by embodying our values in a tangible way while broadening access to real food across the country.</p>
+                    <button onclick="this.parentElement.parentElement.style.transform = this.parentElement.parentElement.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';" style="position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; cursor: pointer;">↻</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0" style=" background-color: #f4f3e7;">
+          <div class="card" style="border: none; background-color: #f4f3e7;">
+            <div class="card-body" style="border-right: 1px solid black;">
+              <h5 class="card-title">Join Our Newsletter</h5>
+              <h3 class="card-text">
+                Sign up for exclusive promos, new menu drops, store openings, and
+                more.
+              </h3>
+              <label for="exampleInputEmail1" class="form-label" style="margin-top: 10px;"
+                >Email address</label
+              >
+              <input
+              style="border: 1px solid black;"
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" style=" background-color: #f4f3e7;">
+          <div class="card" style="border: none; background-color: #f4f3e7; text-align: center;">
+            <div class="card-body">
+              <h5 class="card-title">Download the app</h5>
+              <a style="text-decoration: none; color: black;" href="#"><h1>iOS</h1></a>
+              <a style="text-decoration: none; color: black;" href="#"><h1>Android</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer style="background-color: #d8e5d6;">
+          <div class="title-line">
+              <marquee>
+                  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, odio consequuntur fuga ea aliquam quas hic nihil provident eaque qui quae blanditiis facilis aliquid perferendis modi, laudantium at? Nisi, laboriosam.</h1>
+              </marquee>
+          </div>
+          <div class="footer-links" style="display: flex; flex-direction: row; justify-content: space-between;">
+              <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                  <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                  <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Press</a>
+                  <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+              </div>
+              <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                  <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                  <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Press</a>
+                  <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+              </div>
+              <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                  <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                  <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Press</a>
+                  <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+              </div>
+              <div class="first" style="display: flex; flex-direction: column; padding: 40px;">
+                  <a style="text-decoration: none; color: black;" href="#">Careers</a>
+                  <a style="text-decoration: none; color: black;" href="#">Investor Relations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Locations</a>
+                  <a style="text-decoration: none; color: black;" href="#">Press</a>
+                  <a style="text-decoration: none; color: black;" href="#">sweetgreen app</a>
+              </div>
+              <div class="first" style="padding: 40px;">
+                  <h5>@2025 Sweetgreen</h5>
+              </div>
+          </div>
+          </footer>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function () {
+          document.querySelector(".navbar-menu").classList.toggle("active");
+        });
+      </script>
+</body>
+</html>
